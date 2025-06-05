@@ -1,4 +1,4 @@
-# Hustle & Flip
+# Flip
 
 **A reselling life sim where you turn secondhand junk into first-class profit.**
 
