@@ -38,10 +38,46 @@ Features:
 
 ---
 
+### 🏠 Housing System
+
+**Story Start:**  
+You've just been kicked out of your parents' house and now live under a bridge with only a sleeping bag.
+
+**Progression:**
+1. **Bridge Encampment (Starting Area)**
+   - No storage
+   - Only carry a few items
+   - Sleeping bag "bed"
+
+2. **Condo Apartment (Mid-game)**
+   - Unlockable after earning enough money
+   - Has indoor room for storage
+   - You must buy physical `StorageBox` items to store goods
+
+3. **House / Mansion (Late-game)**
+   - Increased storage space
+   - Aesthetic upgrades
+   - May unlock exclusive buyers or markets
+
+**Classes:**
+- `HousingManager`
+- `PlayerHousing`
+- `StorageBox`
+- `StorageManager`
+- `SleepSystem` *(optional)*
+
+**Storage Types:**
+- Sleeping bag stash (limited slots)
+- Storage box (upgradeable size)
+- Closet
+- Storage Room
+
+---
+
 ### 💭 Debatable Systems
 **Optional Classes:**
 - `PlayerNeedsSystem`  
-  (Handles hunger, thirst, health, etc.)
+  (Handles hunger, thirst, sleep, health, etc.)
 
 ---
 
@@ -93,7 +129,11 @@ Market Types:
 **Classes:**
 - `InventoryManager`
 - `StorageContainer`  
-  (Represents shelves, boxes, etc.)
+  (Represents shelves, boxes, closets, etc.)
+- `StorageBox`  
+  (Physical item you buy and place)
+- `StorageRoomAccess`  
+  (Unlocked via housing upgrade)
 
 ---
 
@@ -194,10 +234,52 @@ Mechanics:
   - `MarketplaceUI`
   - `StatsUI`
   - `DialogUI`
+  - `HousingUI`
 
 ## 🕐 Time System
 - `TimeManager`  
   (Delivery timing, sales refreshes, event triggers)
+
+### 🌅 Day/Night Cycle
+
+**Core Classes:**
+- `TimeManager`  
+  Manages accelerated in-game time
+- `ClockUI`  
+  Shows current time on HUD
+- `LightingManager`  
+  Adjusts environment lighting (sunlight, moonlight)
+- `WorldEventScheduler`  
+  Triggers events based on time (store hours, NPC schedules)
+
+**Example Time Phases:**
+
+| Time  | Phase        | Effects                                  |
+|-------|--------------|------------------------------------------|
+| 6:00  | Dawn         | Warm ambient lighting starts             |
+| 9:00  | Morning      | NPCs spawn, shops open                   |
+| 12:00 | Midday       | Brightest sunlight                       |
+| 18:00 | Evening      | Sunset visuals, shops begin to close     |
+| 21:00 | Night        | Late events, special characters appear   |
+| 0:00  | Late Night   | Fewer NPCs, risk events like theft       |
+
+**Features:**
+- Event cutoffs (deliveries after 5PM arrive next day)
+- Late-night flipping or night market bonuses
+- Optional fatigue system with `SleepSystem`
+- Dynamic lighting via gradients or directional rotation
+
+**Stretch Goals:**
+- Seasons & weather
+- Energy boosters for extended awake time
+- Alarms, timers, and event notifications
+
+**Testing Commands:**
+- `T` key: Advance 1 hour  
+- `Ctrl + T`: Jump to night  
+- Console: `SetTime(hour, minute)`
+
+---
 
 ## 🎉 Event System
 - `EventManager`
@@ -240,6 +322,13 @@ Mechanics:
 - `CharacterCustomizer`
 - `PlayerStats`, `SkillSystem`
 - `PlayerNeedsSystem` *(optional)*
+
+### 🏠 Housing & Storage
+- `HousingManager`
+- `PlayerHousing`
+- `StorageManager`
+- `StorageBox`
+- `SleepSystem` *(optional)*
 
 ### 💰 Economy
 - `CurrencyManager`
