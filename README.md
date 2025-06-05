@@ -8,7 +8,7 @@
 
 ## 🕹️ Game Concept
 
-**Hustle & Flip** is a simulation game where players begin their entrepreneurial journey with nothing but a few bucks and a smartphone. The objective is to build a reselling empire by sourcing items from flea markets, auctions, online classifieds (Kijiji-style), and even drop shipping.
+**$FLIP$** is a simulation game where players begin their entrepreneurial journey with nothing but a few bucks and a smartphone. The objective is to build a reselling empire by sourcing items from flea markets, auctions, online classifieds (Kijiji-style), and even drop shipping.
 
 The player can buy low, clean/repair/improve items, and flip them for profit. Mechanics are designed to simulate real-world resale culture — from negotiating prices, identifying rare collectibles, to handling scams and competition.
 
