@@ -1,4 +1,4 @@
-# 📖 Hustle & Flip – Storyline
+# 📖 FLIP – Storyline
 
 This document outlines the narrative foundation for the game **FLIP**, starting with the **Prologue**.
 
